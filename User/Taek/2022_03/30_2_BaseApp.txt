@@ -1,0 +1,62 @@
+2022 03 30
+Project: BaseApp
+--------------------------------------------------------------------------------------------------------------------
+자동완성팝업창이 나타나지 않거나 사라지면 "" 안에 커서를 두고 [Ctrl]+[Space Bar]
+
+@는 리소스에서 참조하라는 의미
+@+는 리소스에 추가하라는 의미
+--------------------------------------------------------------------------------------------------------------------
+[error] Cannot resolve symbol
+해결법 1. 캐시를 비우고 재실행 File>Invalidate Caches/Restart
+--------------------------------------------------------------------------------------------------------------------
+
+┌-----------------┐
+[activity_main.xml]
+└-----------------┘
+<Button											// 버튼 시작
+        android:layout_width="match_parent"		// 버튼의 너비
+        android:layout_height="wrap_content"	// 버튼의 높이
+        android:id="@+id/button1"				// 버튼의 아이디 (버튼의 이름은 'button1')
+        android:text="@string/strBtn1"			// 버튼에 쓰일 글자 (안드로이드에서는 되도록 strings.xml에 모아두는게 좋음)
+        ></Button>								// 버튼의 끝 (/>로 작성해도 괜찮)
+		
+┌-----------┐
+[strings.xml]
+└-----------┘
+[app]-[res]-[values]-[strings.xml]에 행 추가
+<string name="strBtn1">버튼입니다</string>			// strBtn1이라는 이름으로 "버튼입니다"를 저장하는 듯
+
+┌-----------------┐
+[MainActivity.java]
+└-----------------┘
+*import 행의 +아이콘으로 행 확장 가능
+*[Ctrl]+[Alt]+[O] 누르면 불필요한 임포트 행 삭제
+
+package com.example.a30_2_baseapp;								//패키지 이름
+
+import androidx.appcompat.app.AppCompatActivity;				//import의 순서는 상관 ㄴㄴ
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {			//AppCompatActivity의 클래스 상속 받아 MainActivity 클래스 정의
+    Button button1;												//버튼에 대한 변수를 전역(클래스)변수로 선언
+
+    @Override													//다음 메소드가 오버라이드 되었다는 의미
+    protected void onCreate(Bundle savedInstanceState) {		//오버라이딩한 onCreate 메소드 (C언어의 main() 함수 비슷)
+        super.onCreate(savedInstanceState);						//슈퍼 클래스인 Activity 클래스의 onCreate() 메소드 호출
+        setContentView(R.layout.activity_main);					//setContentView() -> 레이아웃을 화면에 표시, R.layout.activity_main -> [activity_main.xml]파일을 의미
+
+        button1 = (Button) findViewById(R.id.button1);			//button1 변수에 버튼 객체 대입, (Button) -> 변수에 대입할 때 각 클래스의 이름으로 캐스팅, findViewById() -> ID로 위젯에 접근
+        button1.setOnClickListener(new View.OnClickListener() {	//버튼을 클릭했을 때 작동하는 클래스를 익명 내부 클래스(anonymous inner class)로 정의
+            @Override
+            public void onClick(View view) {					//버튼을 클릭했을 때 실제로 작동하는 오버라이드된 메소드
+
+                Toast.makeText(getApplicationContext(),			//메시지를 잠시 나타내는 메소드, 파라미터는 (컨텍스트_어플리케이션 그 자체를 생각하면 됨, 메시지 내용, 출력할 시간)
+				"버튼을 눌렀어요", Toast.LENGTH_SHORT).show();		  getApplicationContext() -> 현재 애플리케이션의 컨텍스트를 구해줌
+            }
+        });														//button1.setOnClickListener 문장의 끝
+    }															//onCreate() 메소드의 끝
+}																//BaseAppActivity 클래스의 끝
+--------------------------------------------------------------------------------------------------------------------

@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 
-public class title extends AppCompatActivity {
+public class Title extends AppCompatActivity {
 
     Button startButton;
 
@@ -19,7 +19,7 @@ public class title extends AppCompatActivity {
         startButton = (Button) findViewById(R.id.StartButton);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), level_select.class);
                 startActivity(intent);
             }

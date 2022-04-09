@@ -19,10 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Level_select"/>
-        <activity android:name=".Level_1"/>
-        <activity android:name=".Level_2"/>
-        <activity android:name=".Level_3"/>
+
+        <!--팝업창 테마 설정-->
+        <activity android:name=".Title_exit_popup" android:theme="@android:style/Theme.Dialog"/>
+
+        <activity android:name=".Level.Level_select"/>
+        <activity android:name=".Level.Level_1"/>
+        <activity android:name=".Level.Level_2"/>
+        <activity android:name=".Level.Level_3"/>
 
     </application>
 

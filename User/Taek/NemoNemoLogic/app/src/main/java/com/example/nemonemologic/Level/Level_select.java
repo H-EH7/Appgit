@@ -1,4 +1,4 @@
-package com.example.nemonemologic;
+package com.example.nemonemologic.Level;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
+
+import com.example.nemonemologic.R;
 
 public class Level_select extends AppCompatActivity {
 

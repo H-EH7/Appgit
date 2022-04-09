@@ -1,4 +1,4 @@
-package com.example.nemonemologic;
+package com.example.nemonemologic.Level;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 
-public class Level_2 extends AppCompatActivity {
+import com.example.nemonemologic.R;
+
+public class Level_3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.level_2);
+        setContentView(R.layout.level_3);
     }
 }

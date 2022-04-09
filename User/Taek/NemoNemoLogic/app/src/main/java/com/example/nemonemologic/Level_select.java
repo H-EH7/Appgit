@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 
-public class level_select extends AppCompatActivity {
+public class Level_select extends AppCompatActivity {
 
     Button Level_1_Button;
     Button Level_2_Button;
@@ -25,7 +25,7 @@ public class level_select extends AppCompatActivity {
         Level_1_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), level_1.class);
+                Intent intent = new Intent(getApplicationContext(), Level_1.class);
                 startActivity(intent);
             }
         });
@@ -33,7 +33,7 @@ public class level_select extends AppCompatActivity {
         Level_2_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), level_2.class);
+                Intent intent = new Intent(getApplicationContext(), Level_2.class);
                 startActivity(intent);
             }
         });
@@ -41,7 +41,7 @@ public class level_select extends AppCompatActivity {
         Level_3_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), level_3.class);
+                Intent intent = new Intent(getApplicationContext(), Level_3.class);
                 startActivity(intent);
             }
         });

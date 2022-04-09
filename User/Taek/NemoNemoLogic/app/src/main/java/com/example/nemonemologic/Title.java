@@ -19,8 +19,8 @@ public class Title extends AppCompatActivity {
         startButton = (Button) findViewById(R.id.StartButton);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), level_select.class);
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Level_select.class);
                 startActivity(intent);
             }
         });
